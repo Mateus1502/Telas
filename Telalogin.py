@@ -4,7 +4,7 @@
 
 
 from pathlib import Path
-from tkinter import messagebox
+
 # from tkinter import *
 # Explicit imports to satisfy Flake8
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
@@ -17,33 +17,12 @@ ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\8000007035\Desktop\b\build\assets\fr
 def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
 
-def logar(): #incluir
 
-    print('clicked')
-
-    usuario = entry_1.get() #usuário
-    senha = entry_1.get()
-    
-    if senha == oi and usuario marcos:
-
-
-     print('teste')
-
-    else:
-
-      messagebox.showwarning('Erro verifique a senha e o nome')
-
-
-
- 
-
-#Para ocultar a senha, utilize o seguinte comando
-
-entry_1.config(show="*")
 window = Tk()
 
 window.geometry("360x800")
 window.configure(bg = "#6734F8")
+
 
 canvas = Canvas(
     window,
@@ -54,37 +33,75 @@ canvas = Canvas(
     highlightthickness = 0,
     relief = "ridge"
 )
+
 canvas.place(x = 0, y = 0)
-canvas.create_rectangle(
-    42.0,
-    558.0,
-    318.0,
-    601.0,
-    fill="#F58C1D",
-    outline="")
-
-
 image_image_1 = PhotoImage(
     file=relative_to_assets("image_1.png"))
 image_1 = canvas.create_image(
     180.0,
-    216.0,
+    155.0,
     image=image_image_1
 )
 
-canvas.create_rectangle(
-    42.0,
-    372.0,
-    318.0,
-    415.0,
-    fill="#FFFFFF",
-    outline="")
-canvas.create_rectangle(
-    42.0,
-    465.0,
-    318.0,
-    508.0,
-    fill="#FFFFFF",
-    outline="")
+entry_image_1 = PhotoImage(
+    file=relative_to_assets("entry_1.png"))
+entry_bg_1 = canvas.create_image(
+    180.0,
+    483.5,
+    image=entry_image_1
+)
+entry_1 = Entry(
+    bd=0,
+    bg="#FFFFFF",
+    fg="#000716",
+    highlightthickness=0
+)
+entry_1.place(
+    x=63.5,
+    y=462.0,
+    width=233.0,
+    height=41.0
+)
+
+entry_image_2 = PhotoImage(
+    file=relative_to_assets("entry_2.png"))
+entry_bg_2 = canvas.create_image(
+    180.0,
+    378.5,
+    image=entry_image_2
+)
+entry_2 = Entry(
+    bd=0,
+    bg="#FFFFFF",
+    fg="#000716",
+    highlightthickness=0
+)
+entry_2.place(
+    x=63.5,
+    y=357.0,
+    width=233.0,
+    height=41.0
+)
+
+entry_image_3 = PhotoImage(
+    file=relative_to_assets("entry_3.png"))
+entry_bg_3 = canvas.create_image(
+    180.0,
+    604.5,
+    image=entry_image_3
+)
+entry_3 = Entry(
+    bd=0,
+    bg="#F58C1D",
+    fg="#000716",
+    highlightthickness=0
+)
+entry_3.place(
+    x=63.5,
+    y=583.0,
+    width=233.0,
+    height=41.0
+)
 window.resizable(False, False)
 window.mainloop()
+
